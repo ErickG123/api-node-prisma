@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="name">Nome</label>
+    <input type="text" name="name" id="name">
+    <label for="Valor">Valor</label>
+    <input type="number" name="value" id="value">
+    <button onclick="createProduct()">Enviar</button>
+
+    <div id="products"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script>
+        axios.get('http://localhost:3000/products')
+            .then(res => getProducts(res.data))
+            .catch(error => console.log(error))
+
+        const getProducts = (data) => {
+            const divProducts = document.getElementById('products')
+            data.map(data => {
+                const name = document.createElement('p')
+                name.innerText = `Nome: ${data.name}`
+                divProducts.appendChild(name)
+            })
+        }
+
+        const createProduct = () => {
+            const name = document.getElementById('name').value
+            const value = document.getElementById('value').value
+
+            axios.post('/products', {
+                name: name,
+                value: value
+            })
+            .then(function (res) {
+                console.log(res);
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+        }
+    </script>
+</body>
+
+</html>

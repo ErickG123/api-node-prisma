@@ -1,10 +1,10 @@
 import { Router } from "express";
 
-import { CreateProductController } from "./controllers/CreateProductController";
-import { FindProductController } from "./controllers/FindProductController";
-import { DeleteProdutcController } from "./controllers/DeleteProdutcController";
-import { UpdateProdutcController } from "./controllers/UpdateProductController";
-import { ListAllProductsController } from "./controllers/ListAllProductsController";
+import { CreateProductController } from "../controllers/products/CreateProductController";
+import { FindProductController } from "../controllers/products/FindProductController";
+import { DeleteProdutcController } from "../controllers/products/DeleteProdutcController";
+import { UpdateProdutcController } from "../controllers/products/UpdateProductController";
+import { ListAllProductsController } from "../controllers/products/ListAllProductsController";
 
 const router = Router();
 
@@ -19,5 +19,9 @@ router.get("/product/:id", findProduct.handle);
 router.delete("/product/:id", deleteProduct.handle);
 router.put("/product/:id", updateProduct.handle);
 router.get("/products", listAllProducts.handle);
+
+router.get("/", (req, res) => {
+    res.sendFile(__dirname + '/views/index.html')
+})
 
 export { router };
