@@ -1,17 +1,18 @@
 import { Request, Response } from "express";
 import { prismaClient } from "../../database/prismaClient";
 
-export class CreateProductController {
+export class CreateUserController {
     async handle(request: Request, response: Response) {
-        const { name, value } = request.body;
+        const { name, email, password } = request.body;
 
-        const product = await prismaClient.product.create({
+        const user = await prismaClient.user.create({
             data: {
                 name,
-                value
+                email,
+                password
             }
         })
 
-        return response.json(product);
+        return response.json(user);
     }
 }

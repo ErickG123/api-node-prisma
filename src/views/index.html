@@ -5,49 +5,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Cadastro</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
 </head>
 
-<body>
-    <label for="name">Nome</label>
-    <input type="text" name="name" id="name">
-    <label for="Valor">Valor</label>
-    <input type="number" name="value" id="value">
-    <button onclick="createProduct()">Enviar</button>
+<div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
+<form action="/login">
+    <h3>Cadastro</h3>
 
-    <div id="products"></div>
+    <label for="name">Usuário</label>
+    <input type="text" placeholder="Nome completo" id="name">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
-    <script>
-        axios.get('http://localhost:3000/products')
-            .then(res => getProducts(res.data))
-            .catch(error => console.log(error))
+    <label for="email">E-mail</label>
+    <input type="text" placeholder="Digite o seu email" id="email">
 
-        const getProducts = (data) => {
-            const divProducts = document.getElementById('products')
-            data.map(data => {
-                const name = document.createElement('p')
-                name.innerText = `Nome: ${data.name}`
-                divProducts.appendChild(name)
-            })
-        }
+    <label for="password">Senha</label>
+    <input type="password" placeholder="Digite a sua senha" id="password">
 
-        const createProduct = () => {
-            const name = document.getElementById('name').value
-            const value = document.getElementById('value').value
+    <button onclick="createUser()">Criar cadastro</button>
+    <div class="social">
+      <div class="go"><i class="fab fa-google"></i>Google</div>
+      <div class="fb"><i class="fab fa-facebook"></i>Facebook</div>
+    </div>
+</form>
 
-            axios.post('/products', {
-                name: name,
-                value: value
-            })
-            .then(function (res) {
-                console.log(res);
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
-        }
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script>
+    // axios.get('http://localhost:3000/products')
+    //     .then(res => getProducts(res.data))
+    //     .catch(error => console.log(error))
+
+    // const getProducts = (data) => {
+    //     const divProducts = document.getElementById('products')
+    //     data.map(data => {
+    //         const name = document.createElement('p')
+    //         name.innerText = `Nome: ${data.name}`
+    //         divProducts.appendChild(name)
+    //     })
+    // }
+
+    const createUser = () => {
+        const name = document.getElementById('name').value
+        const email = document.getElementById('email').value
+        const password = document.getElementById('password').value
+
+        axios.post('/users', {
+            name: name,
+            email: email,
+            password: password
+        })
+        .then(function (res) {
+            console.log(res.data);
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+    }
+</script>
 </body>
 
 </html>
