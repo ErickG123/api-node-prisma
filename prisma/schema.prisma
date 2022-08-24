@@ -20,10 +20,20 @@ model Product {
 }
 
 model User {
-  id       String @id @default(uuid())
-  name     String
-  email    String @unique
-  password String 
+  id            String        @id @default(uuid())
+  name          String
+  email         String        @unique
+  password      String
+  refresh_token RefreshToken?
 
   @@map("users")
+}
+
+model RefreshToken {
+  id        String @id @default(uuid())
+  expiresIn Int
+  user      User   @relation(fields: [userId], references: [id])
+  userId    String @unique
+
+  @@map("refresh_tokens")
 }
