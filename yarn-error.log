@@ -1,29 +1,29 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\erick\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @types/dayjs
+  C:\Program Files\nodejs\node.exe C:\Users\usuario\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @types/
 
 PATH: 
-  C:\Users\erick\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\erick\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\src\flutter\bin;C:\ProgramData\chocolatey\bin;C:\src\flutter\.pub-cache\bin;C:\Users\erick\AppData\Local\Pub\Cache\bin;C:\Program Files\dotnet;C:\Program Files\Microsoft SQL Server\150\Tools\Binn;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn;C:\Program Files\CMake\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Users\erick\AppData\Local\Microsoft\WindowsApps;C:\Users\erick\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\erick\AppData\Roaming\npm;C:\Users\erick\AppData\Local\JetBrains\PyCharm Community Edition 2021.3.1\bin;C:\tools\dart-sdk\bin;C:\Users\erick\AppData\Roaming\Pub\Cache\bin;C:\Users\erick\AppData\Local\Programs\Hyper\resources\bin;C:\Users\erick\.dotnet\tools;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\ProgramData\UNIVALI\Portugol Studio;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\usuario\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\usuario\AppData\Local\Programs\Python\Python310\;C:\Users\usuario\AppData\Local\Microsoft\WindowsApps;;C:\Users\usuario\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\usuario\AppData\Roaming\npm
 
 Yarn version: 
   1.22.19
 
 Node version: 
-  16.13.2
+  16.17.0
 
 Platform: 
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2fdayjs: Not found
-      at Request.params.callback [as _callback] (C:\Users\erick\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66145:18)
-      at Request.self.callback (C:\Users\erick\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140890:22)
-      at Request.emit (node:events:390:28)
-      at Request.<anonymous> (C:\Users\erick\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141862:10)
-      at Request.emit (node:events:390:28)
-      at IncomingMessage.<anonymous> (C:\Users\erick\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141784:12)
-      at Object.onceWrapper (node:events:509:28)
-      at IncomingMessage.emit (node:events:402:35)
-      at endReadableNT (node:internal/streams/readable:1343:12)
+  Error: https://registry.yarnpkg.com/@types%2f: Request "https://registry.yarnpkg.com/@types%2f" returned a 405
+      at Request.params.callback [as _callback] (C:\Users\usuario\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66154:18)
+      at Request.self.callback (C:\Users\usuario\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140890:22)
+      at Request.emit (node:events:513:28)
+      at Request.<anonymous> (C:\Users\usuario\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141862:10)
+      at Request.emit (node:events:513:28)
+      at IncomingMessage.<anonymous> (C:\Users\usuario\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141784:12)
+      at Object.onceWrapper (node:events:627:28)
+      at IncomingMessage.emit (node:events:525:35)
+      at endReadableNT (node:internal/streams/readable:1358:12)
       at processTicksAndRejections (node:internal/process/task_queues:83:21)
 
 npm manifest: 
